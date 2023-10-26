@@ -37,4 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Our link to Vercel
 
-[Class project 3](https://vercel.com/luka-munivranas-projects/hci-2023-24)
+[Class project 3](https://hci-2023-24-xi.vercel.app/)
