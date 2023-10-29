@@ -24,10 +24,19 @@ export default function RootLayout({
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="/game_assesment">Game Assesment</Link>
           </li>
           <li>
-            <Link href="/showcase">Showcase</Link>
+            <Link href="/game_requirements">Game Requirements</Link>
+          </li>
+          <li>
+            <Link href="/computer_analysis">Computer Analysis</Link>
+          </li>
+          <li>
+            <Link href="/optimization_and_recommendations">Optimization & Recommendations</Link>
+          </li>
+          <li>
+            <Link href="/community_insights">Community Insights</Link>
           </li>
         </ul>
       
