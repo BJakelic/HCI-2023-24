@@ -1,35 +1,9 @@
-import Link from "next/link";
-
-export interface Post {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
-}
-
-const BASE_API_URL = "https://jsonplaceholder.typicode.com";
-
-const getPosts = async (): Promise<Post[]> => {
-    const data = await fetch(`${BASE_API_URL}/posts`);
-    return data.json();
-};
-
-export default async function Optimization_and_Recommendations() {
-    const posts = await getPosts();
+function Optimization_and_Recommendations() {
     return (
-        <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
-            <h1 className="text-3xl font-bold p-10">Optimization & Recommendations</h1>
-            <ul className="flex flex-col gap-8">
-                {posts.map((post) => (
-                    <li key={post.id}>
-                        <Link href={`optimization_and_recommendations/${post.id}`}>
-                            <span className="text-2xl text-purple-500">
-                                Post {post.title}
-                            </span>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </main>
+        <main className="flex justify-center text-4xl p-14">
+            <h1>Optimization & Recommendations</h1>
+        </main>  
     );
 }
+
+export default Optimization_and_Recommendations;
