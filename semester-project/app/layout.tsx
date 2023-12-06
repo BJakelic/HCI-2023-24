@@ -28,15 +28,6 @@ export const metadata: Metadata = {
   },
   description: "Next.js lab project",
 };
-// Get this info from some external source (e.g. CMS)
-const pages: Record<string, `/${string}`> = {
-  Home: "/",
-  Game_assesment: "/game_assesment",
-  Game_requirements: "/game_requirements",
-  Computer_analysis: "/computer_analysis",
-  Optimization_and_recommendations: "/optimization_and_recommendations",
-  Community_insights: "/community_insights",
-};
 
 export default function RootLayout({
   children,
@@ -52,7 +43,7 @@ export default function RootLayout({
           playfairDisplay.variable
         )}
       >
-        <Navbar pages={pages} />
+        <Navbar />
         {children}
         <Footer />
       </body>
