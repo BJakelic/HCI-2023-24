@@ -1,42 +1,39 @@
 "use client";
+import { useState } from "react";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FC } from "react";
-import Logo from "./Logo";
-import { cn } from "@/lib/utils";
+import Logo from "@/components/Logo";
+import MainNav from "@/components/MainNav";
+import MobileNav from "@/components/MobileNav";
 
-interface NavbarProps {
-    // Record of string keys and string values where each value is a path starting with a slash
-    pages: Record<string, `/${string}`>;
-}
+export type Page = {
+  href: string;
+  title: string;
+};
+
+// Get this info from some external source (e.g. CMS)
+const pages: Page[] = [
+  { href: "/", title: "Home" },
+  { href: "/computer_analysis", title: "Computer analysis" },
+  { href: "/community_insights", title: "Community insights" },
+  { href: "/game_assesment", title: "Game assesment" },
+  { href: "/game_requirements", title: "Game requirements" },
+  { href: "/optimization_and_recommendations", title: "Optimization & recommendations" },
+  { href: "/state", title: "State" },
+];
 
 const baseClass =
     "uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 rounded-sm text-brand-purple-900 hover:bg-brand-purple-200";
 
-const Navbar: FC<NavbarProps> = ({ pages }) => {
-    const pathName = usePathname();
-
-    return (
-        <nav className="flex items-center justify-center p-4">
-          <ul className="flex gap-2">
-            {Object.entries(pages).map(([name, path]) => (
-              <li key={name}>
-                <Link href={path}>
-                  <span
-                    className={cn(baseClass, {
-                      "bg-brand-purple-700 text-brand-purple-100 pointer-events-none":
-                        path === pathName,
-                    })}
-                  >
-                    {name}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      );
-}
-
-export default Navbar;
+const NavBar = () => {
+  const [open, setOpen] = useState(false);
+    
+  return (
+    <div className="container flex items-center justify-between">
+      <Logo />
+      <MainNav pages={pages} />
+      <MobileNav open={open} clickHandler={setOpen} pages={pages} />
+    </div>
+  );
+};
+    
+export default NavBar;
