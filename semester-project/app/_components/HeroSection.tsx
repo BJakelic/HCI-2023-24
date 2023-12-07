@@ -1,9 +1,9 @@
 import Image, { StaticImageData } from "next/image";
 
-import heroImage1 from "@/public/hero/pierre-chatel-innocenti-pxoZSTdAzeU-unsplash.jpg";
-import heroImage2 from "@/public/hero/alex-padurariu-ZR48YvUpk04-unsplash.jpg";
-import heroImage4 from "@/public/hero/yoann-siloine-dyaxQ-aoGWY-unsplash.jpg";
-import heroImage3 from "@/public/hero/matt-le-SJSpo9hQf7s-unsplash.jpg";
+import heroImage1 from "@/public/hero/img1.jpg";
+import heroImage2 from "@/public/hero/img2.jpg";
+import heroImage4 from "@/public/hero/img3.jpg";
+import heroImage3 from "@/public/hero/img4.jpg";
 
 type HeroImageObject = {
   image: StaticImageData;
@@ -18,19 +18,21 @@ const images: HeroImageObject[] = [
 ];
 
 const HeroSection = () => (
-  <section className="container flex justify-between items-center gap-10 w-screen">
+  <section className="container flex justify-around items-center gap-10 w-screen p-20">
     <div className="flex flex-col justify-start gap-5 max-w-xl">
-      <h1 className="font-playfair text-6xl font-extrabold text-brand-purple-900 whitespace-break-spaces">
-        Where Vision Meets Innovation
+      <h1 className="font-roboto text-5xl font-bold text-brand-special-100 whitespace-break-spaces">
+        Welcome to SpecsChecks!
       </h1>
-      <p className="font-roboto text-lg whitespace-break-spaces">
-        Welcome to{" "}
-        <span className="font-roboto-condensed font-bold text-xl text-brand-purple-900 whitespace-nowrap">
-          design matters.
-        </span>
-        , where creativity knows no bounds and innovation is our guiding principle.
-        At our design studio, we believe in the power of visionary thinking to transform
-        ordinary concepts into extraordinary experiences.
+      <p className="font-roboto text-m whitespace-break-spaces italic font-bold text-brand-blue-300">
+        Start your gaming journey now! <b />
+      </p>
+      <p className="font-roboto font-bold text-brand-special-100">
+        Are you ready to level up your gaming experience? <b/>
+        Introducing SpecsChecks, your got-to destination
+        for ensuring that your computer is ready for the 
+        latest and greatest games. Whether you're a dedicated
+        gamer, a casual player, or a parent looking for
+        family-friendly options, SpecsChecks has you covered.
       </p>
     </div>
     <div className="flex-shrink-0">
