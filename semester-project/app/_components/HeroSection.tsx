@@ -30,7 +30,7 @@ const HeroSection = () => (
         Are you ready to level up your gaming experience? <b/>
         Introducing SpecsChecks, your got-to destination
         for ensuring that your computer is ready for the 
-        latest and greatest games. Whether you're a dedicated
+        latest and greatest games. Whether you&apos;re a dedicated
         gamer, a casual player, or a parent looking for
         family-friendly options, SpecsChecks has you covered.
       </p>
