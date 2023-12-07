@@ -4,6 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Page } from "@/components/Navbar";
+import { HamburgerProps } from "@/components/Hamburger";
+
+type MobileNavProps = HamburgerProps & {
+  pages: Page[];
+};
 
 const MobileNav = ({ pages, open, clickHandler }: MobileNavProps) => {
   const pathname = usePathname();
