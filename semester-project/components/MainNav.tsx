@@ -8,7 +8,7 @@ import { Page } from "@/components/Navbar";
 const MainNav = ({ pages }: { pages: Page[] }) => {
   const pathname = usePathname();
   return (
-    <nav className="hidden lg:flex items-center justify-center p-4">
+    <nav className="hidden lg:flex items-center justify-center">
       <ul className="flex gap-2">
         {pages.map(({ href, title }) => (
           <li key={href}>

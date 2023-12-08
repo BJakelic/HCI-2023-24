@@ -1,11 +1,16 @@
-import { FC } from "react";
+import Image, { StaticImageData } from "next/image";
 
-import LogoIcon from "./icons/LogoIcon";
+import LogoImage from "@/public/hero/specschecks-logo.png";
+import LogoIconImage from "@/public/hero/specschecks-icon.png";
 
-const Logo: FC = () => (
-  <div className="flex items-center justify-between max-w-min gap-2">
-    <LogoIcon />
+export const Logo = () => (
+  <div className="p-1">
+    <Image src="/hero/specschecks-logo.png" alt="SpecsChecksLogo" width="300" height="150"/>
   </div>
 );
 
-export default Logo;
+export const LogoIcon = () => (
+  <div className="p-1">
+    <Image src="/hero/specschecks-icon.png" alt="SpecsChecksLogoIcon" width="300" height="150"/>
+  </div>
+);

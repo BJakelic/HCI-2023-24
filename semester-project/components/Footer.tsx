@@ -1,4 +1,4 @@
-import Logo from "@/components/Logo";
+import { LogoIcon } from "@/components/Logo";
 import Icons from "@/components/icons/Icons";
 
 type TitleProps = {
@@ -13,8 +13,8 @@ const FooterListTitle = ({ children }: TitleProps) => (
 
 const Footer = () => (
   <div className="bg-brand-blue-100 px-10 py-10">
-    <div className="container flex flex-col items-center gap-10 self-stretch">
-      <div className="grid grid-cols-2 gap-10 justify-around justify-items-center self-stretch">
+    <div className="container flex flex-col items-center gap-10">
+      <div className="grid grid-cols-3 gap-10 justify-around justify-items-center self-center">
         <div>
           <div className="hidden md:block text-brand-special-200 mb-4 font-roboto">
             <b>WHAT DO WE OFFER?</b> <br />
@@ -27,6 +27,10 @@ const Footer = () => (
             <br />
             Ready, set, game!
           </div>
+        </div>
+        <div className="font-roboto text-brand-special-200 sm:text-lg italic">
+          <LogoIcon />
+          Unlock Your Gaming Potential with Confidence.
         </div>
         <div className="flex flex-wrap justify-center gap-11">
           <div>
@@ -53,9 +57,6 @@ const Footer = () => (
           </div>
         </div>
       </div>
-      <p className="font-roboto text-brand-special-200 text-base sm:text-lg italic">
-        Unlock Your Gaming Potential with Confidence.
-      </p>
     </div>
   </div>
 );

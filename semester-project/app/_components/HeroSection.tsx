@@ -18,7 +18,7 @@ const images: HeroImageObject[] = [
 ];
 
 const HeroSection = () => (
-  <section className="container flex justify-around items-center gap-10 w-screen p-20">
+  <section className="container flex justify-around items-center gap-10 .w-screen p-20">
     <div className="flex flex-col justify-start gap-5 max-w-xl">
       <h1 className="font-roboto text-5xl font-bold text-brand-special-100 whitespace-break-spaces">
         Welcome to SpecsChecks!
