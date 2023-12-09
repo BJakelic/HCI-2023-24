@@ -13,12 +13,11 @@ const FooterListTitle = ({ children }: TitleProps) => (
 
 const Footer = () => (
   <div className="bg-brand-blue-100 px-10 py-10">
-    <div className="container flex flex-col items-center gap-10">
-      <div className="grid grid-cols-3 gap-10 justify-around justify-items-center self-center">
+    <div className="flex flex-col items-center gap-10">
+      <div className="grid md:grid-cols-3 gap-10 justify-around justify-items-center">
         <div>
-          <div className="hidden md:block text-brand-special-200 mb-4 font-roboto">
+          <div className="flex flex-col text-brand-special-200 mb-4 font-roboto">
             <b>WHAT DO WE OFFER?</b> <br />
-            <br />
             - Game compatibility checks <br />
             - Game requirements made easy <br />
             - Detailed compatibility analysis <br />
@@ -32,7 +31,7 @@ const Footer = () => (
           <LogoIcon />
           Unlock Your Gaming Potential with Confidence.
         </div>
-        <div className="flex flex-wrap justify-center gap-11">
+        <div className="flex flex-wrap justify-items-center gap-10">
           <div>
             <FooterListTitle>Contact Us</FooterListTitle>
             <ul className="font-roboto text-brand-special-200 mb-4">

@@ -11,15 +11,15 @@ type HeroImageObject = {
 };
 
 const images: HeroImageObject[] = [
-  { image: heroImage1, borderRadius: "20% 0 0 0" },
-  { image: heroImage2, borderRadius: "0 20% 0 0" },
-  { image: heroImage3, borderRadius: "0 0 0 20%" },
-  { image: heroImage4, borderRadius: "0 0 20% 0" },
+  { image: heroImage1, borderRadius: "10% 10% 10% 10%" },
+  { image: heroImage2, borderRadius: "10% 10% 10% 10%" },
+  { image: heroImage3, borderRadius: "10% 10% 10% 10%" },
+  { image: heroImage4, borderRadius: "10% 10% 10% 10%" },
 ];
 
 const HeroSection = () => (
-  <section className="container flex justify-around items-center gap-10 .w-screen p-20">
-    <div className="flex flex-col justify-start gap-5 max-w-xl">
+  <section className="grid md:grid-cols-2 flex justify-evenly justify-items-center gap-10 .w-screen p-20">
+    <div className="flex flex-col justify-center gap-5 max-w-xl">
       <h1 className="font-roboto text-5xl font-bold text-brand-special-100 whitespace-break-spaces">
         Welcome to SpecsChecks!
       </h1>
@@ -35,8 +35,8 @@ const HeroSection = () => (
         family-friendly options, SpecsChecks has you covered.
       </p>
     </div>
-    <div className="flex-shrink-0">
-      <div className="grid grid-cols-2 grid-rows-2 gap-2 grow">
+    <div className="">
+      <div className="grid grid-cols-2 md:grid-rows-2 gap-2 shrink">
         {images.map((imageObj, index) => (
           <div key={index} className="relative h-52 w-52">
             <Image

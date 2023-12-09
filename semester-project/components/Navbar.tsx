@@ -28,7 +28,7 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
     
   return (
-    <div className="container grid grid-rows-2 flex justify-items-center justify-evenly bg-brand-blue-300">
+    <div className="grid grid-rows-2 flex justify-items-center justify-evenly bg-brand-blue-300">
       <Logo />
       <MainNav pages={pages} />
       <MobileNav open={open} clickHandler={setOpen} pages={pages} />
