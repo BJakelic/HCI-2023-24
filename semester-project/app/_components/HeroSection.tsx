@@ -36,7 +36,7 @@ const HeroSection = () => (
       </p>
     </div>
     <div className="">
-      <div className="grid grid-cols-2 md:grid-rows-2 gap-2 shrink">
+      <div className="grid grid-cols-2 gap-2 grow">
         {images.map((imageObj, index) => (
           <div key={index} className="relative h-52 w-52">
             <Image

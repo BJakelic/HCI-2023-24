@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Logo } from "@/components/Logo";
 import MainNav from "@/components/MainNav";
 import MobileNav from "@/components/MobileNav";
+import MyMenu from "./DropdownMenu";
 
 export type Page = {
   href: string;
@@ -28,8 +29,11 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
     
   return (
-    <div className="grid grid-rows-2 flex justify-items-center justify-evenly bg-brand-blue-300">
+    <div className="grid grid-rows-2 flex justify-items-center justify-evenly bg-brand-blue-100">
       <Logo />
+      <div className="md:hidden">
+        <MyMenu pages={pages} />
+      </div>
       <MainNav pages={pages} />
       <MobileNav open={open} clickHandler={setOpen} pages={pages} />
     </div>
