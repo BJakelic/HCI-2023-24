@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import { Logo } from "@/components/Logo";
 import MainNav from "@/components/MainNav";
-import MobileNav from "@/components/MobileNav";
 import MyMenu from "./DropdownMenu";
 
 export type Page = {
@@ -22,20 +21,20 @@ const pages: Page[] = [
   { href: "/state", title: "State" },
 ];
 
-const baseClass =
-    "uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 rounded-sm text-brand-purple-700 hover:bg-brand-purple-200";
+
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
     
   return (
-    <div className="grid grid-rows-2 flex justify-items-center justify-evenly bg-brand-blue-100">
-      <Logo />
-      <div className="md:hidden">
+    <div className="grid grid-rows-[max-content_1fr] flex justify-items-center justify-evenly bg-brand-blue-100 p-4 gap-y-5">
+      <div className="bg-brand-special-200 rounded-lg border-2 border-black self-start">
+        <Logo />
+      </div>
+      <div className="md:hidden mb-2">
         <MyMenu pages={pages} />
       </div>
       <MainNav pages={pages} />
-      <MobileNav open={open} clickHandler={setOpen} pages={pages} />
     </div>
   );
 };
