@@ -13,7 +13,7 @@ const FooterListTitle = ({ children }: TitleProps) => (
 
 const Footer = () => (
   <div className="bg-brand-blue-100 px-10 py-10">
-    <div className="flex flex-col items-center gap-10">
+    <div className="gap-10">
       <div className="grid md:grid-cols-3 gap-10 justify-around justify-items-center">
         <div>
           <div className="flex flex-col text-brand-special-200 mb-4 font-roboto">
@@ -28,11 +28,15 @@ const Footer = () => (
           </div>
         </div>
         <div className="font-roboto text-brand-special-200 sm:text-lg italic">
-          <LogoIcon />
-          Unlock Your Gaming Potential with Confidence.
+          <div className="grid grid-cols-1 justify-items-center gap-y-2">
+            <div className="bg-brand-special-200 rounded-full">
+              <LogoIcon />
+            </div>
+            Unlock Your Gaming Potential with Confidence.
+          </div>
         </div>
-        <div className="flex flex-wrap justify-items-center gap-10">
-          <div>
+        <div className="flex flex-col gap-10">
+          <div className="grid grid-cols-1">
             <FooterListTitle>Contact Us</FooterListTitle>
             <ul className="font-roboto text-brand-special-200 mb-4">
               <li>Ulica kralja Tomislava 1</li>
