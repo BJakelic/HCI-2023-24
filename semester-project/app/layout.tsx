@@ -3,6 +3,7 @@ import { Roboto, Roboto_Condensed, Playfair_Display } from "next/font/google";
 import clsx from "clsx";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Logo } from "@/components/Logo";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -43,6 +44,7 @@ export default function RootLayout({
           playfairDisplay.variable
         )}
       >
+        <Logo />
         <Navbar />
         {children}
         <Footer />
