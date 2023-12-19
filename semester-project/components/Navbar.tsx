@@ -27,10 +27,7 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
     
   return (
-    <div className="grid grid-rows-[max-content_1fr] flex justify-items-center justify-evenly bg-brand-blue-100 p-4 gap-y-5">
-      <div className="bg-brand-special-200 rounded-lg border-2 border-black self-start">
-        <Logo />
-      </div>
+    <div className="grid grid-rows-[max-content_1fr] flex justify-center justify-evenly bg-brand-blue-100 p-6">
       <div className="md:hidden mb-2">
         <MyMenu pages={pages} />
       </div>

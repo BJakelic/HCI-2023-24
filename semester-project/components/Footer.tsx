@@ -6,7 +6,7 @@ type TitleProps = {
 };
 
 const FooterListTitle = ({ children }: TitleProps) => (
-  <div className="font-roboto-condensed font-bold text-2xl whitespace-nowrap text-brand-special-200 mb-1 lg:mb-5">
+  <div className="font-roboto font-bold text-2xl whitespace-nowrap text-brand-special-200 mb-1 lg:mb-5">
     {children}
   </div>
 );
@@ -14,12 +14,12 @@ const FooterListTitle = ({ children }: TitleProps) => (
 const Footer = () => (
   <div className="bg-brand-blue-100 px-10 py-10">
     <div className="gap-10">
-      <div className="grid md:grid-cols-3 gap-10 justify-around justify-items-center">
+      <div className="grid md:grid-cols-3 gap-10 justify-around justify-items-center align-middle">
         <div>
           <div className="flex flex-col text-brand-special-200 mb-4 font-roboto">
-            <b>WHAT DO WE OFFER?</b> <br />
+            <b className="text-2xl">What do we offer?</b> <br />
             - Game compatibility checks <br />
-            - Game requirements made easy <br />
+            - Game requirements made easier <br />
             - Detailed compatibility analysis <br />
             - Optimization & recommendations <br />
             - Community insights <br />
@@ -29,15 +29,17 @@ const Footer = () => (
         </div>
         <div className="font-roboto text-brand-special-200 sm:text-lg italic">
           <div className="grid grid-cols-1 justify-items-center gap-y-2">
-            <div className="bg-brand-special-200 rounded-full">
+            <div className="bg-brand-special-200 rounded-full inline-flex w-40 h-40 items-center justify-center">
               <LogoIcon />
             </div>
             Unlock Your Gaming Potential with Confidence.
           </div>
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col">
           <div className="grid grid-cols-1">
-            <FooterListTitle>Contact Us</FooterListTitle>
+            <div className="font-roboto">
+              <FooterListTitle>Contact Us</FooterListTitle>
+            </div>
             <ul className="font-roboto text-brand-special-200 mb-4">
               <li>Ulica kralja Tomislava 1</li>
               <li>21000, Split, Croatia</li>
