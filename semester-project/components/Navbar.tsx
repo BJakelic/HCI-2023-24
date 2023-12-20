@@ -28,7 +28,7 @@ const NavBar = () => {
     
   return (
     <div className="grid grid-rows-[max-content_1fr] flex justify-center justify-evenly bg-brand-blue-100 p-6">
-      <div className="md:hidden mb-2">
+      <div className=" mb-2">
         <MyMenu pages={pages} />
       </div>
       <MainNav pages={pages} />

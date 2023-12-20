@@ -18,13 +18,13 @@ const images: HeroImageObject[] = [
 ];
 
 const HeroSection = () => (
-  <section className="grid md:grid-cols-2 flex justify-evenly justify-items-center gap-10 .w-screen p-20">
+  <section className="grid md:grid-cols-2 justify-evenly justify-items-center gap-10 .w-screen p-20">
     <div className="flex flex-col justify-center gap-5 max-w-xl">
-      <h1 className="font-roboto text-5xl font-bold text-brand-special-100 whitespace-break-spaces">
-        Welcome to SpecsChecks!
+      <h1 className="text-5xl font-bold text-brand-special-100 whitespace-break-spaces">
+        <span className="font-roboto">Welcome to </span><span className="font-tahoma text-brand-blue-100 font-bold">Specs</span><span className="font-tahoma text-brand-special-300 font-bold">Checks</span><span className="font-roboto">!</span>
       </h1>
       <p className="font-roboto text-m whitespace-break-spaces italic font-bold text-brand-blue-300">
-        Start your gaming journey now! <b />
+        Start your gaming journey now! <b/>
       </p>
       <p className="font-roboto font-bold text-brand-special-100">
         Are you ready to level up your gaming experience? <b/>
