@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 
 export const Logo = () => (
-  <div className="p-1 flex align-middle justify-center">
+  <div className="p-1 flex align-middle justify-center bg-brand-blue-200">
     <Image src="/hero/specschecks-logo.png" alt="SpecsChecksLogo" width="400" height="300"/>
   </div>
 );
