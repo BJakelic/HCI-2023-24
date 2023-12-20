@@ -24,8 +24,8 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    template: "Lab project | %s",
-    default: "Lab project",
+    template: "SpecsChecks | %s",
+    default: "SpecsChecks",
   },
   description: "Next.js lab project",
 };

@@ -13,6 +13,7 @@ const config: Config = {
         "roboto-condensed": ["var(--font-roboto-condensed)"],
         inter: ["var(--font-inter)"],
         playfair: ["var(--font-playfair)"],
+        tahoma: ["var(--font-tahoma)"],
       },
       colors: {
         "brand-purple": {
