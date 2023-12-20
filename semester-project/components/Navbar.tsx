@@ -27,7 +27,7 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
     
   return (
-    <div className="grid grid-rows-[max-content_1fr] flex justify-center justify-evenly bg-brand-blue-100 p-6">
+    <div className="grid grid-rows-[max-content_1fr] justify-evenly bg-brand-blue-100 p-6">
       <div className=" mb-2">
         <MyMenu pages={pages} />
       </div>
