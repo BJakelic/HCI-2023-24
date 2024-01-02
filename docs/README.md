@@ -3,7 +3,7 @@
 - Updated and improved overall design (colors, font, buttons, etc.)<br />
 - Functional dropdown menu<br />
 - Added favicon<br />
-- Using \<Link> instead of \<a> references<br />
+- Using &lt;Link&gt; instead of &lt;a&gt; references<br />
 <h2>  ❌ Problems:</h2>
 - Mobile version responsivness (images overlapping)<br />
 - Favicon needs a white background color<br />
