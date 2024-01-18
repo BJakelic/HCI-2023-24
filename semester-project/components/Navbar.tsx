@@ -12,12 +12,10 @@ export type Page = {
 // Get this info from some external source (e.g. CMS)
 const pages: Page[] = [
   { href: "/", title: "Home" },
-  { href: "/computer_analysis", title: "Computer analysis" },
-  { href: "/community_insights", title: "Community insights" },
-  { href: "/game_assesment", title: "Game assesment" },
-  { href: "/game_requirements", title: "Game requirements" },
-  { href: "/optimization_and_recommendations", title: "Optimization & recommendations" },
-  { href: "/state", title: "State" },
+  { href: "/analysis", title: "Analysis" },
+  { href: "/feedback", title: "Feedback" },
+  { href: "/recommendations", title: "Recommendations" },
+  { href: "/login", title: "Login" },
 ];
 
 
