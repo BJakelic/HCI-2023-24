@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import clsx from "clsx";
+import NotFound from "@/app/not-found";
 
 export interface Post {
   userId: number;
@@ -55,20 +56,26 @@ export default async function Feedback({
     page: page,
   });
 
+  if(page > totalPages)
+    return NotFound();
+
   return (
     <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
       <h1 className="text-3xl font-bold p-10">Feedback</h1>
+      <div className="py-5">
+        Page {page} of {totalPages}
+      </div>
         <div className="flex items-baseline gap-8 pb-10">
-          <div>
-            Page {page} of {totalPages}
-          </div>
           <div className="flex gap-4">
             <Link
               href={{
                 pathname: "/feedback",
                 query: { _page: 1, _limit: pageSize },
               }}
-              className="rounded border bg-gray-100 px-3 py-1 text-gray-800"
+              className={clsx(
+                "rounded border bg-gray-100 px-3 py-1 text-gray-800",
+                page === 1 && "pointer-events-none opacity-50"
+              )}
             >
               First
             </Link>
@@ -101,7 +108,10 @@ export default async function Feedback({
                 pathname: "/feedback",
                 query: { _page: totalPages, _limit: pageSize },
               }}
-              className="rounded border bg-gray-100 px-3 py-1 text-gray-800"
+              className={clsx(
+                "rounded border bg-gray-100 px-3 py-1 text-gray-800",
+                page === totalPages && "pointer-events-none opacity-50"
+              )}
             >
               Last
             </Link>
