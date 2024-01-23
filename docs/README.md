@@ -19,3 +19,12 @@
 - Responsiveness still needs work<br />
 - Card names too long<br />
 - Must implement CMS<br />
+
+<h1>📝 Weekly progress #3</h1>
+<h2>  ✅ Status:</h2>
+- Changed card names<br />
+- New features on Feedback page<br />
+- Improved overall design<br />
+<h2>  ❌ Problems:</h2>
+- Responsiveness still needs work<br />
+- Must implement CMS<br />
