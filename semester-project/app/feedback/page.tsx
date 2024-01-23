@@ -61,9 +61,8 @@ export default async function Feedback({
 
   return (
     <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
-      <h1 className="text-3xl font-bold p-10">Feedback</h1>
-      <div className="py-5">
-        Page {page} of {totalPages}
+      <div className="py-5 font-roboto text-brand-special-300">
+        Page <span className="font-bold">{page}</span> of <span className="font-bold">{totalPages}</span>
       </div>
         <div className="flex items-baseline gap-8 pb-10">
           <div className="flex gap-4">
@@ -73,11 +72,11 @@ export default async function Feedback({
                 query: { _page: 1, _limit: pageSize },
               }}
               className={clsx(
-                "rounded border bg-gray-100 px-3 py-1 text-gray-800",
+                "rounded bg-brand-blue-200 px-3 py-2 text-brand-special-100 font-tahoma font-bold text-xs",
                 page === 1 && "pointer-events-none opacity-50"
               )}
             >
-              First
+              FIRST
             </Link>
             <Link
               href={{
@@ -85,11 +84,11 @@ export default async function Feedback({
                 query: { _page: page > 1 ? page - 1 : 1, _limit: pageSize },
               }}
               className={clsx(
-                "rounded border bg-gray-100 px-3 py-1 text-gray-800",
+                "rounded bg-brand-blue-100 px-3 py-2 text-white font-tahoma font-bold text-xs",
                 page === 1 && "pointer-events-none opacity-50"
               )}
             >
-              Previous
+              PREVIOUS
             </Link>
             <Link
               href={{
@@ -97,11 +96,11 @@ export default async function Feedback({
                 query: { _page: page + 1, _limit: pageSize },
               }}
               className={clsx(
-                "rounded border bg-gray-100 px-3 py-1 text-gray-800",
+                "rounded bg-brand-blue-100 px-3 py-2 text-white font-tahoma font-bold text-xs",
                 page === totalPages && "pointer-events-none opacity-50"
               )}
             >
-              Next
+              NEXT
             </Link>
             <Link
               href={{
@@ -109,11 +108,11 @@ export default async function Feedback({
                 query: { _page: totalPages, _limit: pageSize },
               }}
               className={clsx(
-                "rounded border bg-gray-100 px-3 py-1 text-gray-800",
+                "rounded bg-brand-blue-200 px-3 py-2 text-brand-special-100 font-tahoma font-bold text-xs",
                 page === totalPages && "pointer-events-none opacity-50"
               )}
             >
-              Last
+              LAST
             </Link>
           </div>
         </div>
@@ -121,7 +120,7 @@ export default async function Feedback({
         {posts.map((post) => (
           <li key={post.id}>
             <Link href={`feedback/${post.id}`}>
-              <span className="text-2xl text-purple-500">
+              <span className="text-2xl font-tahoma text-brand-special-100 px-3 py-3 rounded border-2 border-brand-special-100 hover:bg-brand-blue-100 hover:border-white hover:text-white">
                 Post {post.title}
               </span>
             </Link>

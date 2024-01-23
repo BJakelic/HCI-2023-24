@@ -13,8 +13,8 @@ interface StudentProps {
 const studentsConstArray = [
   {
     id: 1,
-    name: "Mate",
-    lastName: "Matic",
+    name: "Stipe",
+    lastName: "Matić",
     imgSrc: "https://unsplash.com/photos/MTZTGvDsHFY/download?force=true&w=500",
   },
   {
@@ -27,12 +27,8 @@ const studentsConstArray = [
 
 const Student: FC<StudentProps> = ({ name, lastName, imgSrc }) => {
   return (
-    <li className="flex flex-row relative items-center bg-blue-200 mt-2 p-2 rounded-full">
-      <section className="mr-5 w-24 mt-5 mb-5 flex-row justify-between flex items-center">
-        <p className="text-lg text-brand-purple-800">{name}</p>
-        <p className="text-lg text-brand-purple-800">{lastName}</p>
-      </section>
-      <div className="w-[65px] h-[65px] relative">
+    <li className="flex relative w-max items-center bg-brand-blue-100 mt-2 pt-0.5 pb-0.5 pl-2 pr-2 rounded-xl">
+      <div className="w-[50px] h-[50px] relative">
         <Image
           src={imgSrc}
           alt="profile image"
@@ -41,6 +37,9 @@ const Student: FC<StudentProps> = ({ name, lastName, imgSrc }) => {
           className="rounded-full"
         />
       </div>
+      <section className="mr-2 mt-5 mb-5 flex-row justify-start flex items-center">
+        <p className="text-lg text-white font-tahoma font-semibold pl-2">{name} {lastName}</p>
+      </section>
     </li>
   );
 };
@@ -115,11 +114,11 @@ const StateDemo: FC = () => {
 
   return (
     <main className="py-8">
-      <h1 className="text-center mt-5 mb-5 font-bold text-4xl underline">
-        Welcome to state demo!
+      <h1 className="text-center mt-5 mb-5 font-tahoma font-bold text-brand-special-100 text-4xl">
+        Join our community!
       </h1>
       {state.shouldHideStudents ? (
-        <p className="text-center">Sorry! Studenti spavajau 😴</p>
+        <p className="text-center">No active users at the moment... 😴</p>
       ) : (
         <ul className="flex flex-col items-center justify-around">
           {students.map((el) => (
@@ -129,7 +128,7 @@ const StateDemo: FC = () => {
       )}
       <section className="flex flex-col w-64 justify-center items-center my-0 mx-auto border-gray-500">
         <input
-          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 mt-4"
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-brand-special-100 rounded-xl py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-brand-blue-100 mt-4"
           type="text"
           placeholder="Name"
           onChange={(e) =>
@@ -137,7 +136,7 @@ const StateDemo: FC = () => {
           }
         />
         <input
-          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 mt-4"
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-brand-special-100 rounded-xl py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-brand-blue-100 mt-4"
           type="text"
           placeholder="Last name"
           onChange={(e) =>
@@ -146,31 +145,31 @@ const StateDemo: FC = () => {
         />
         <button
           onClick={handleAddStudentClick}
-          className="my-5 cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          className="my-5 font-tahoma text-sm font-bold px-5 py-3 cursor-pointer rounded-xl text-brand-special-100 bg-brand-special-300 hover:bg-brand-orange-800 hover:text-white"
         >
-          Submit
+          LOG IN
         </button>
       </section>
       <button
         onClick={handleToggleClick}
-        className="block mx-auto cursor-pointer bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"
+        className="block mx-auto font-tahoma text-sm font-bold px-5 py-3 cursor-pointer rounded-xl text-brand-special-100 bg-brand-blue-200 hover:text-white hover:bg-brand-blue-300"
       >
-        Toggle
+        TOGGLE
       </button>
       <input
         value={filterValue}
         onChange={handleFilterChange}
-        className="mx-auto block my-4 appearance-none bg-gray-200 text-gray-700 border rounded py-3 px-4 focus:outline-none focus:bg-white focus:border-blue-500 mt-4"
+        className="mx-auto block my-4 appearance-none bg-gray-200 text-gray-700 border-2 border-brand-special-100 rounded-xl py-3 px-4 focus:outline-none focus:white focus:border-brand-blue-100 mt-4"
         type="text"
         placeholder="Filter input"
       />
       <button
         onClick={handleClearFilter}
-        className={`mx-auto block rounded-md border-2 border-red-400 text-red-500 py-0.5 px-4 ${
+        className={`mx-auto block rounded-md border-2 border-red-400 text-red-400 py-0.5 px-4 hover:bg-red-400 hover:text-white hover:border-white ${
           showShowClearButton ? "visible" : "invisible"
         }`}
       >
-        Clear
+        CLEAR
       </button>
     </main>
   );
