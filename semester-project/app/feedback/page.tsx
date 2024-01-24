@@ -120,7 +120,7 @@ export default async function Feedback({
         {posts.map((post) => (
           <li key={post.id}>
             <Link href={`feedback/${post.id}`}>
-              <span className="text-2xl font-tahoma text-brand-special-100 px-3 py-3 rounded border-2 border-brand-special-100 hover:bg-brand-blue-100 hover:border-white hover:text-white">
+              <span className="text-2xl font-tahoma text-brand-special-100 px-3 mb-3 py-1 rounded hover:bg-brand-blue-100 hover:border-white hover:text-white">
                 Post {post.title}
               </span>
             </Link>
