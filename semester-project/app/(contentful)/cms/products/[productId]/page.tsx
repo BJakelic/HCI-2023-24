@@ -15,6 +15,7 @@ import "highlight.js/styles/github-dark.css";
 //import { RichTextLinksFragment } from "@/specschecks/app/gql/graphql";
 import { HeroImage } from "../page";
 import contentfulService from "@/lib/contentfulClient";
+import { Key } from "react";
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("python", python);
@@ -90,7 +91,7 @@ const ProductPage = async ({ params }: { params: Params }) => {
         />
         <div className="flex flex-col gap-4 justify-between">
           <div className="grid grid-cols-2 gap-2">
-            {product.images?.map((image) => (
+            {product.images?.map((image: Key | null | undefined) => (
               <div key={image} className="relative w-full h-32">
                 <Image
                   fill
