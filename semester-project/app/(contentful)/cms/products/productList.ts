@@ -1,5 +1,5 @@
 import { TypeCategory } from "../../types/TypeCategory";
-import { TypeProductListItem } from "../../types/TypeProduct";
+import { TypeProductDetailItem, TypeProductListItem } from "../../types/TypeProduct";
 
 export const categories: TypeCategory[] = [
   {
@@ -19,10 +19,10 @@ export const categories: TypeCategory[] = [
   },
 ];
 
-export const products: TypeProductListItem[] = [
+export const products: TypeProductDetailItem[] = [
   {
     name: "Smart watch",
-    id: 11,
+    id: "11",
     listed: true,
     description: "The best smartwatch around",
     price: 0,
@@ -38,7 +38,7 @@ export const products: TypeProductListItem[] = [
   },
   {
     name: "Robot",
-    id: 10,
+    id: "10",
     listed: true,
     description: "Humanoid robot",
     price: 2000,
@@ -308,7 +308,7 @@ export const products: TypeProductListItem[] = [
   },
   {
     name: "Chocolate cake 2",
-    id: 8,
+    id: "8",
     listed: true,
     description: "Second best simple chocolate cake",
     price: 0,
@@ -324,7 +324,7 @@ export const products: TypeProductListItem[] = [
   },
   {
     name: "Suit jacket",
-    id: 2,
+    id: "2",
     listed: true,
     description: "Nice suit jacket for a casual look.",
     price: 0,
@@ -340,7 +340,7 @@ export const products: TypeProductListItem[] = [
   },
   {
     name: "Lancome lipstick",
-    id: 5,
+    id: "5",
     listed: true,
     description: "Red Lancome lipstick.",
     price: 0,

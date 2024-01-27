@@ -35,10 +35,13 @@ import { TypeCategory } from "./TypeCategory";
 
 export interface TypeProductListItem {
   name: string;
-  id: number;
+  id: string;
   description: string;
   categories: TypeCategory[];
   heroImage: string;
+}
+
+export interface TypeProductDetailItem extends TypeProductListItem {
   price: number;
   currencyCode: "CHF" | "EUR" | "GBP" | "USD";
   listed: boolean;
