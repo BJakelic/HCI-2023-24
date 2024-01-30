@@ -18,6 +18,10 @@ interface Pagination {
 
 const BASE_API_URL = "https://jsonplaceholder.typicode.com";
 
+export type SearchParams = {
+  searchParams: Record<string, string | string[] | undefined>;
+};
+
 const getPosts = async (
   pagination: Pagination = {
     limit: 9999,
@@ -38,11 +42,7 @@ const getTotalPosts = async (): Promise<number> => {
   return parseInt(response.headers.get("x-total-count") || "1", 10);
 };
 
-export default async function Feedback({
-  searchParams,
-}: {
-  searchParams: Record<string, string | string[] | undefined>;
-}) {
+export default async function Feedback({ searchParams }: SearchParams ) {
   const { _limit, _page } = searchParams;
   var [pageSize, page] = [_limit, _page].map(Number);
   const totalPosts = await getTotalPosts();
@@ -120,7 +120,7 @@ export default async function Feedback({
         {posts.map((post) => (
           <li key={post.id}>
             <Link href={`feedback/${post.id}`}>
-              <span className="text-2xl font-tahoma text-brand-special-100 px-3 py-3 rounded border-2 border-brand-special-100 hover:bg-brand-blue-100 hover:border-white hover:text-white">
+              <span className="text-2xl font-tahoma text-brand-special-100 px-3 mb-3 py-1 rounded hover:bg-brand-blue-100 hover:border-white hover:text-white">
                 Post {post.title}
               </span>
             </Link>

@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export const Logo = () => (
   <div className="p-1 flex align-middle justify-center bg-brand-blue-200">
