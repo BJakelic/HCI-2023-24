@@ -15,8 +15,8 @@ const pages: Page[] = [
   { href: "/analysis", title: "Analysis" },
   { href: "/feedback", title: "Feedback" },
   { href: "/recommendations", title: "Recommendations" },
-  { href: "/login", title: "Login" },
   { href: "/cms/products", title: "Products" },
+  { href: "/login", title: "Login" },
 ];
 
 

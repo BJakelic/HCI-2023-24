@@ -28,7 +28,7 @@ const HeroSection = () => (
       </p>
       <p className="font-roboto font-bold text-brand-special-100">
         Are you ready to level up your gaming experience? <b/>
-        Introducing SpecsChecks, your got-to destination
+        Introducing SpecsChecks, your go-to destination
         for ensuring that your computer is ready for the 
         latest and greatest games. Whether you&apos;re a dedicated
         gamer, a casual player, or a parent looking for
