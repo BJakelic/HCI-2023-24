@@ -28,3 +28,10 @@
 <h2>  ❌ Problems:</h2>
 - Responsiveness still needs work<br />
 - Must implement CMS<br />
+
+<h1>📝 Weekly progress #4</h1>
+<h2>  ✅ Status:</h2>
+- Implemented CMS<br />
+- Added Products page<br />
+<h2>  ❌ Problems:</h2>
+- Minor technical issues<br />
