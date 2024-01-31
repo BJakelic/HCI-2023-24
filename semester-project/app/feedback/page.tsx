@@ -3,6 +3,7 @@
 import Link from "next/link";
 import clsx from "clsx";
 import NotFound from "@/app/not-found";
+import { CLIENT_STATIC_FILES_RUNTIME_REACT_REFRESH } from "next/dist/shared/lib/constants";
 
 export interface Post {
   userId: number;
@@ -116,12 +117,12 @@ export default async function Feedback({ searchParams }: SearchParams ) {
             </Link>
           </div>
         </div>
-      <ul className="flex flex-col gap-8">
+      <ul className="flex flex-col gap-8 p-10 border-2 border-brand-special-100 bg-brand-blue-200 rounded-2xl">
         {posts.map((post) => (
-          <li key={post.id}>
+          <li key={post.id} className="max-w-lg">
             <Link href={`feedback/${post.id}`}>
-              <span className="text-2xl font-tahoma text-brand-special-100 px-3 mb-3 py-1 rounded hover:bg-brand-blue-100 hover:border-white hover:text-white">
-                Post {post.title}
+              <span className="block w-full text-2xl font-tahoma bg-white text-brand-blue-100 border-2 border-brand-blue-100 px-3 py-1 rounded hover:bg-brand-blue-100 hover:border-white hover:text-white">
+                <b>POST {post.id}</b> <p className="text-brand-special-100">{post.title}</p>
               </span>
             </Link>
           </li>

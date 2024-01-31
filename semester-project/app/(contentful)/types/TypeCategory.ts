@@ -1,3 +1,3 @@
 export interface TypeCategory {
-    label: "clothing" | "cosmetics" | "entertainment" | "food" | "technology";
+    label: "laptop" | "equipment" | "devices";
   }
