@@ -62,6 +62,9 @@ export default async function Feedback({ searchParams }: SearchParams ) {
 
   return (
     <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
+      <h1 className="text-center mt-5 mb-5 font-tahoma font-bold text-brand-special-100 text-4xl">
+        Get in touch with other users here!
+      </h1>
       <div className="py-5 font-roboto text-brand-special-300">
         Page <span className="font-bold">{page}</span> of <span className="font-bold">{totalPages}</span>
       </div>

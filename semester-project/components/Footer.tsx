@@ -14,7 +14,7 @@ const FooterListTitle = ({ children }: TitleProps) => (
 const Footer = () => (
   <div className="bg-brand-blue-100 px-10 py-10">
     <div className="gap-10">
-      <div className="grid md:grid-cols-3 gap-10 justify-around justify-items-center align-middle">
+      <div className="grid md:grid-cols-3 gap-20 md:gap-10 justify-around md:justify-items-center align-middle">
         <div>
           <div className="flex flex-col text-brand-special-200 mb-4 font-roboto">
             <b className="text-2xl">What do we offer?</b> <br />
