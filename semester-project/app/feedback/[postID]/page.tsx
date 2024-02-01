@@ -16,10 +16,10 @@ export default async function Community_Insights_Post({ params }: { params: Para
 
     return (
         <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
-            <h1 className="text-3xl font-bold p-10 capitalize">
-                <span className="text-neutral-400">Post {post.id}:</span> {post.title}
+            <h1 className="text-3xl font-bold font-tahoma p-10 capitalize text-brand-special-100">
+                <span>POST {post.id}:</span> {post.title}
             </h1>
-            <p className="text-xl p-10">{post.body}</p>
+            <p className="text-xl font-tahoma bg-brand-blue-200 text-brand-special-100 rounded-2xl p-10">{post.body}</p>
         </main>
     );
 }
