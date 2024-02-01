@@ -18,13 +18,14 @@ const Footer = () => (
         <div>
           <div className="flex flex-col text-brand-special-200 mb-4 font-roboto">
             <b className="text-2xl">What do we offer?</b> <br />
-            - Game compatibility checks <br />
-            - Game requirements made easier <br />
-            - Detailed compatibility analysis <br />
-            - Optimization & recommendations <br />
-            - Community insights <br />
-            <br />
-            Ready, set, game!
+            <ul className="list-disc pl-5">
+              <li>Game compatibility checks</li>
+              <li>Game requirements made easier</li>
+              <li>Detailed compatibility analysis</li>
+              <li>Optimization & recommendations</li>
+              <li>Community insights</li>
+            </ul><br />
+            <b>🎮 Ready, set, game!</b>
           </div>
         </div>
         <div className="font-roboto text-brand-special-200 sm:text-lg italic">
@@ -32,7 +33,7 @@ const Footer = () => (
             <div className="bg-brand-special-200 rounded-full inline-flex w-40 h-40 items-center justify-center">
               <LogoIcon />
             </div>
-            Unlock Your Gaming Potential with Confidence.
+            <p className="text-center"><u>"Unlock Your Gaming Potential with Confidence."</u></p>
           </div>
         </div>
         <div className="flex flex-col">

@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Logo } from "@/components/Logo";
+import Link from "next/link";
 import "./globals.css";
 
 const roboto = Roboto({

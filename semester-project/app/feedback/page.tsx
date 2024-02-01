@@ -1,4 +1,4 @@
-"use client";
+//"use client";
 
 import Link from "next/link";
 import clsx from "clsx";
@@ -117,17 +117,72 @@ export default async function Feedback({ searchParams }: SearchParams ) {
             </Link>
           </div>
         </div>
-      <ul className="flex flex-col gap-8 p-10 border-2 border-brand-special-100 bg-brand-blue-200 rounded-2xl">
+      <ul className="flex flex-col gap-8 p-10 bg-brand-blue-200 rounded-2xl w-full">
         {posts.map((post) => (
-          <li key={post.id} className="max-w-lg">
+          <li key={post.id} className="w-full">
             <Link href={`feedback/${post.id}`}>
-              <span className="block w-full text-2xl font-tahoma bg-white text-brand-blue-100 border-2 border-brand-blue-100 px-3 py-1 rounded hover:bg-brand-blue-100 hover:border-white hover:text-white">
-                <b>POST {post.id}</b> <p className="text-brand-special-100">{post.title}</p>
+              <span className="block w-full text-2xl font-tahoma bg-white text-brand-blue-100 border-2 border-brand-blue-200 px-3 py-1 rounded hover:bg-brand-blue-100 hover:border-white hover:text-white">
+                <b>POST {post.id}:</b> <p className="text-brand-special-100 text-lg">{post.title}</p>
               </span>
             </Link>
           </li>
         ))}
       </ul>
+      <div className="py-5 font-roboto text-brand-special-300">
+        Page <span className="font-bold">{page}</span> of <span className="font-bold">{totalPages}</span>
+      </div>
+        <div className="flex items-baseline gap-8 pb-10">
+          <div className="flex gap-4">
+            <Link
+              href={{
+                pathname: "/feedback",
+                query: { _page: 1, _limit: pageSize },
+              }}
+              className={clsx(
+                "rounded bg-brand-blue-200 px-3 py-2 text-brand-special-100 font-tahoma font-bold text-xs",
+                page === 1 && "pointer-events-none opacity-50"
+              )}
+            >
+              FIRST
+            </Link>
+            <Link
+              href={{
+                pathname: "/feedback",
+                query: { _page: page > 1 ? page - 1 : 1, _limit: pageSize },
+              }}
+              className={clsx(
+                "rounded bg-brand-blue-100 px-3 py-2 text-white font-tahoma font-bold text-xs",
+                page === 1 && "pointer-events-none opacity-50"
+              )}
+            >
+              PREVIOUS
+            </Link>
+            <Link
+              href={{
+                pathname: "/feedback",
+                query: { _page: page + 1, _limit: pageSize },
+              }}
+              className={clsx(
+                "rounded bg-brand-blue-100 px-3 py-2 text-white font-tahoma font-bold text-xs",
+                page === totalPages && "pointer-events-none opacity-50"
+              )}
+            >
+              NEXT
+            </Link>
+            <Link
+              href={{
+                pathname: "/feedback",
+                query: { _page: totalPages, _limit: pageSize },
+              }}
+              className={clsx(
+                "rounded bg-brand-blue-200 px-3 py-2 text-brand-special-100 font-tahoma font-bold text-xs",
+                page === totalPages && "pointer-events-none opacity-50"
+              )}
+            >
+              LAST
+            </Link>
+          </div>
+        </div>
     </main>
   );
 }

@@ -19,3 +19,15 @@
 body {
   color: rgb(var(--foreground-rgb));
 }
+
+@media (max-width: 300px) {
+  .thin-screen-control {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 300px) {
+  .thin-screen-control {
+    font-size: 36px;
+  }
+}
