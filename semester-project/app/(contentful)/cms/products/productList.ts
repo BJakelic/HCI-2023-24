@@ -1,5 +1,5 @@
 import { TypeCategory } from "../../types/TypeCategory";
-import { TypeProductDetailItem, TypeProductListItem } from "../../types/TypeProduct";
+import { TypeProductListItem } from "../../types/TypeProduct";
 
 export const categories: TypeCategory[] = [
   {

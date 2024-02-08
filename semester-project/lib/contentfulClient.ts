@@ -1,6 +1,6 @@
 import { TypeCategory } from "@/app/(contentful)/types/TypeCategory";
 import {
-  TypeProductDetailItem,
+  //TypeProductDetailItem,
   TypeProductListItem,
 } from "@/app/(contentful)/types/TypeProduct";
 
@@ -33,43 +33,17 @@ const getAllCategoriesQuery = `query {
     }
   }`;
 
-const gqlProductByIdQuery = `query GetProductById($productId: String!) {
+const gqlProductByIdQuery = `query getProductById($productId: String!) {
   product(id: $productId) {
-    name
-    price
-    description
-    currencyCode
-    listed
-    heroImage {
-      url
+    name,
+    description,
+    image {
+      url,
+      title
     }
-    categoriesCollection {
+    categoryCollection {
       items {
-        label
-      }
-    }
-    imagesCollection {
-      items {
-        url
-      }
-    }
-    richTextDescription {
-      json
-      links {
-        entries {
-          __typename
-          block {
-            sys {
-              id
-            }
-            ... on CodeBlockSection {
-              __typename
-              title
-              language
-              content
-            }
-          }
-        }
+        category
       }
     }
   }
@@ -83,14 +57,14 @@ interface ProductCollectionResponse {
 }
 
 interface ProductItem {
+  product: any;
   categoryCollection: any;
-  image: any;
   sys: {
     id: string;
   };
   name: string;
   description: string;
-  heroImage: {
+  image: {
     url: string;
     title: string;
   };
@@ -109,6 +83,7 @@ interface CategoryCollectionResponse {
 
 interface DetailProductResponse {
   product: {
+    image: any;
     name: string;
     imagesCollection: {
       items: {
@@ -202,9 +177,7 @@ const getAllCategories = async (): Promise<TypeCategory[]> => {
 };
 
 
-const getProductById = async (
-  id: string
-): Promise<TypeProductListItem | null> => {
+const getProductById = async (id: string): Promise<TypeProductListItem | null> => {
   try {
     const response = await fetch(baseUrl, {
       method: "POST",
@@ -219,22 +192,17 @@ const getProductById = async (
     });
 
     const body = (await response.json()) as {
-      data: DetailProductResponse;
+      data: ProductItem;
     };
 
     const responseProduct = body.data.product;
 
-    const product: TypeProductDetailItem = {
+    const product: TypeProductListItem = {
       id: id,
       name: responseProduct.name,
-      images: responseProduct.imagesCollection.items.map((item) => item.url),
-      richTextDescription: responseProduct.richTextDescription,
-      price: responseProduct.price,
-      currencyCode: responseProduct.currencyCode,
-      listed: responseProduct.listed,
       description: responseProduct.description,
-      category: responseProduct.categoriesCollection.items.map((c) => c),
-      image: responseProduct.heroImage.url,
+      category: responseProduct.categoryCollection.items.map((c: any) => c),
+      image: responseProduct.image.url,
     };
 
     return product;

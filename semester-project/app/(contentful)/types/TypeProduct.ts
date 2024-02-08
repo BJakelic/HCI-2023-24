@@ -41,7 +41,7 @@ export interface TypeProductListItem {
   image: string;
 }
 
-export interface TypeProductDetailItem extends TypeProductListItem {
+/*export interface TypeProductDetailItem extends TypeProductListItem {
   price: number;
   currencyCode: "CHF" | "EUR" | "GBP" | "USD";
   listed: boolean;
@@ -50,4 +50,4 @@ export interface TypeProductDetailItem extends TypeProductListItem {
     links: any;
   };
   images: string[];
-}
+}*/
