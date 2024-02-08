@@ -1,3 +1,3 @@
 export interface TypeCategory {
-    label: "laptop" | "equipment" | "devices";
+    label: "laptop" | "hardware" | "device" | "PC";
   }

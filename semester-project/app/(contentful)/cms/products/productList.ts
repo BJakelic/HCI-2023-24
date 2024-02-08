@@ -6,28 +6,27 @@ export const categories: TypeCategory[] = [
     label: "laptop",
   },
   {
-    label: "equipment",
+    label: "hardware",
   },
   {
-    label: "devices",
+    label: "device",
+  },
+  {
+    label: "PC",
   },
 ];
 
-export const products: TypeProductDetailItem[] = [
+export const products: TypeProductListItem[] = [
   {
     name: "HP Laptop",
-    id: "11",
-    listed: true,
+    id: "4",
     description: "Ideal for students",
-    price: 500,
-    currencyCode: "EUR",
-    categories: [
+    category: [
       {
         label: "laptop",
       },
     ],
-    heroImage:
+    image:
       "https://images.ctfassets.net/9ukmjns0f30z/7drvMkzIXeWeuzmHCGZbdj/e7478b9b0e408954b7ca3d48ebe3ea7c/hp_laptop.webp",
-    images: [],
   },
 ];
