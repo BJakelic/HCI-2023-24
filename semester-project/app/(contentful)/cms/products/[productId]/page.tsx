@@ -74,53 +74,27 @@ const ProductPage = async ({ params }: { params: Params }) => {
     return <div>Product not found</div>;
   }
 
+  function documentToHtmlString(json: any): string | TrustedHTML {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <main className="container flex flex-col items-center gap-10 mb-10">
       <h1 className="font-roboto-condensed text-6xl font-extrabold text-brand-purple-900 my-4">
         {product?.name}
       </h1>
       <div className="grid grid-cols-2 gap-4 w-3/4 relative">
-        <Badge className="absolute top-4 left-4 z-40" variant="entertainment">
-          {product.currencyCode && currencySymbolMapping[product.currencyCode]}
-          {product.price}
-        </Badge>
         <HeroImage
-          image={product?.heroImage}
+          image={product?.image}
           productName={product.name}
           className="w-full h-[400px]"
         />
         <div className="flex flex-col gap-4 justify-between">
-          <div className="grid grid-cols-2 gap-2">
-            {product.images?.map((image: Key | null | undefined) => (
-              <div key={image} className="relative w-full h-32">
-                <Image
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="rounded-md"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  src={image as string}
-                  alt={product.name as string}
-                />
-              </div>
-            ))}
-          </div>
           <div className="flex flex-col">
             <div className="mb-2">{product.description}</div>
             <Button variant="emph">+ Add to cart </Button>
           </div>
         </div>
-      </div>
-      {/* <div
-        className="mt-10 prose prose-h1:text-brand-purple-800"
-        dangerouslySetInnerHTML={{
-          __html: documentToHtmlString(product?.richTextDescription?.json),
-        }}
-      /> */}
-      <div className="mt-10 prose prose-h1:text-brand-purple-800">
-        {documentToReactComponents(
-          product.richTextDescription?.json,
-          //renderOptions(product.richTextDescription?.links)
-        )}
       </div>
     </main>
   );

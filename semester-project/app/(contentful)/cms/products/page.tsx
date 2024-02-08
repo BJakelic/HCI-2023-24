@@ -10,11 +10,11 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import CategoryFilter from "../_components/CategoryFilter";
-import { FC } from "react";
+import { FC, JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode } from "react";
 import { TypeProductListItem } from "../../types/TypeProduct";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-// import { products, categories } from "./productList";
+import { products, categories } from "./productList";
 import contentfulService from "@/lib/contentfulClient";
 
 export interface HeroImageProps {
@@ -47,9 +47,9 @@ export const HeroImage = ({
 const ProductCard: FC<TypeProductListItem> = ({
   name,
   description,
-  heroImage,
+  image,
   id,
-  categories,
+  category,
 }) => (
   <Card className="w-fit">
     <CardHeader>
@@ -60,7 +60,7 @@ const ProductCard: FC<TypeProductListItem> = ({
       <Link href={`products/${id}`}>
         <div className="relative w-96 h-60">
           <Image
-            src={heroImage}
+            src={image}
             fill
             style={{ objectFit: "cover" }}
             className="rounded-md hover:opacity-70"
@@ -71,7 +71,7 @@ const ProductCard: FC<TypeProductListItem> = ({
       </Link>
     </CardContent>
     <CardFooter>
-      {categories?.map((category) => (
+      {category?.map((category: { label: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | PromiseLikeOfReactNode | null | undefined; }) => (
         <Badge variant={category?.label as BadgeProps["variant"]} key={id}>
           {category?.label}
         </Badge>
@@ -82,11 +82,11 @@ const ProductCard: FC<TypeProductListItem> = ({
 
 const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
   const products = await contentfulService.getAllProducts();
-  const categories = await contentfulService.getAllCategories();
+  //const categories = await contentfulService.getAllCategories();
 
   const filteredProducts = searchParams._category
     ? products.filter((product) => {
-        return product.categories?.some((category) => {
+        return product.category?.some((category) => {
           return category.label === searchParams._category;
         });
       })

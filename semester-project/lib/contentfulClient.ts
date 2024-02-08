@@ -12,13 +12,13 @@ const gqlAllProductsQuery = `query ProductList {
       }
       name,
       description,
-      heroImage {
+      image {
         url,
         title
       }
-      categoriesCollection {
+      categoryCollection {
         items {
-          label
+          category
         }
       }
     }
@@ -83,6 +83,8 @@ interface ProductCollectionResponse {
 }
 
 interface ProductItem {
+  categoryCollection: any;
+  image: any;
   sys: {
     id: string;
   };
@@ -159,8 +161,8 @@ const getAllProducts = async (): Promise<TypeProductListItem[]> => {
         id: item.sys.id,
         name: item.name,
         description: item.description,
-        heroImage: item.heroImage.url,
-        categories: item.categoriesCollection.items.map((category) => category),
+        image: item.image.url,
+        category: item.categoryCollection.items.map((category: any) => category),
       }));
 
     return products;
@@ -199,9 +201,10 @@ const getAllCategories = async (): Promise<TypeCategory[]> => {
   }
 };
 
+
 const getProductById = async (
   id: string
-): Promise<TypeProductDetailItem | null> => {
+): Promise<TypeProductListItem | null> => {
   try {
     const response = await fetch(baseUrl, {
       method: "POST",
@@ -230,8 +233,8 @@ const getProductById = async (
       currencyCode: responseProduct.currencyCode,
       listed: responseProduct.listed,
       description: responseProduct.description,
-      categories: responseProduct.categoriesCollection.items.map((c) => c),
-      heroImage: responseProduct.heroImage.url,
+      category: responseProduct.categoriesCollection.items.map((c) => c),
+      image: responseProduct.heroImage.url,
     };
 
     return product;

@@ -37,8 +37,8 @@ export interface TypeProductListItem {
   name: string;
   id: string;
   description: string;
-  categories: TypeCategory[];
-  heroImage: string;
+  category: TypeCategory[];
+  image: string;
 }
 
 export interface TypeProductDetailItem extends TypeProductListItem {
