@@ -28,7 +28,7 @@ const gqlAllProductsQuery = `query ProductList {
 const getAllCategoriesQuery = `query {
   categoryCollection {
     items {
-      label
+        category
       }
     }
   }`;

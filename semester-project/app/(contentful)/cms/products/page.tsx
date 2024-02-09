@@ -53,8 +53,8 @@ const ProductCard: FC<TypeProductListItem> = ({
 }) => (
   <Card className="w-fit">
     <CardHeader>
-      <CardTitle className="text-brand-purple-800">{name}</CardTitle>
-      <CardDescription>{description}</CardDescription>
+      <CardTitle className="text-brand-special-100 font-tahoma font-bold">{name}</CardTitle>
+      <CardDescription className="text-brand-blue-300 font-tahoma">{description}</CardDescription>
     </CardHeader>
     <CardContent>
       <Link href={`products/${id}`}>
@@ -93,11 +93,10 @@ const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
     : products;
 
   return (
-    <main className="container flex flex-col items-center gap-10 py-8">
+    <main className="container flex flex-col items-center gap-10 pt-8 pb-24">
       <h1 className="text-center mt-5 mb-5 font-tahoma font-bold text-brand-special-100 text-4xl">
-        Products
+        Check out some available products that match your desires!
       </h1>
-      <CategoryFilter categories={categories} />
       <ul className="grid grid-cols-2 gap-8">
         {filteredProducts.map((product) => {
           return (

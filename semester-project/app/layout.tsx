@@ -45,7 +45,7 @@ export default function RootLayout({
           playfairDisplay.variable
         )}
       >
-        <Logo />
+        
         <Navbar />
         {children}
         <Footer />

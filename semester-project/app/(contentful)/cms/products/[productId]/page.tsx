@@ -79,20 +79,20 @@ const ProductPage = async ({ params }: { params: Params }) => {
   }
 
   return (
-    <main className="container flex flex-col items-center gap-10 mb-10">
-      <h1 className="font-roboto-condensed text-6xl font-extrabold text-brand-purple-900 my-4">
-        {product?.name}
+    <main className="container flex flex-col items-center gap-10 pt-8 pb-24">
+      <h1 className="text-center mt-5 mb-5 font-tahoma font-bold text-brand-special-100 text-4xl">
+        <u>{product?.name}</u>
       </h1>
-      <div className="grid grid-cols-2 gap-4 w-3/4 relative">
+      <div className="grid grid-cols-2 gap-4 w-3/5 relative">
         <HeroImage
           image={product?.image}
           productName={product.name}
           className="w-full h-[400px]"
         />
-        <div className="flex flex-col gap-4 justify-between">
+        <div className="flex flex-col gap-4 justify-between mb-20">
           <div className="flex flex-col">
-            <div className="mb-2">{product.description}</div>
-            <Button variant="emph">+ Add to cart </Button>
+            <div className="mb-2 font-tahoma text-lg text-brand-special-100 bg-brand-blue-200 p-2 rounded">{product.description}</div>
+            <Button className="font-tahoma font-bold text-sm bg-white hover:bg-brand-special-300 border-2 border-brand-special-300 text-brand-special-300 hover:text-white rounded-full">+ Add to cart </Button>
           </div>
         </div>
       </div>
