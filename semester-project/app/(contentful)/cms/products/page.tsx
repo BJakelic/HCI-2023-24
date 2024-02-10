@@ -9,12 +9,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import CategoryFilter from "../_components/CategoryFilter";
+//import CategoryFilter from "../_components/CategoryFilter";
 import { FC, JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode } from "react";
 import { TypeProductListItem } from "../../types/TypeProduct";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { products, categories } from "./productList";
+//import { products, categories } from "./productList";
 import contentfulService from "@/lib/contentfulClient";
 
 export interface HeroImageProps {
@@ -58,7 +58,7 @@ const ProductCard: FC<TypeProductListItem> = ({
     </CardHeader>
     <CardContent>
       <Link href={`products/${id}`}>
-        <div className="relative w-96 h-60">
+        <div className="relative w-48 h-32 sm:w-64 sm:h-48 lg:w-96 lg:h-64">
           <Image
             src={image}
             fill
@@ -94,10 +94,10 @@ const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
 
   return (
     <main className="container flex flex-col items-center gap-10 pt-8 pb-24">
-      <h1 className="text-center mt-5 mb-5 font-tahoma font-bold text-brand-special-100 text-4xl">
+      <h1 className="text-center mt-5 mb-5 mr-2 ml-2 font-tahoma font-bold text-brand-special-100 text-2xl md:text-4xl">
         Check out some available products that match your desires!
       </h1>
-      <ul className="grid grid-cols-2 gap-8">
+      <ul className="grid md:grid-cols-2 gap-8">
         {filteredProducts.map((product) => {
           return (
             <li key={product.id}>

@@ -83,7 +83,7 @@ const ProductPage = async ({ params }: { params: Params }) => {
       <h1 className="text-center mt-5 mb-5 font-tahoma font-bold text-brand-special-100 text-4xl">
         <u>{product?.name}</u>
       </h1>
-      <div className="grid grid-cols-2 gap-4 w-3/5 relative">
+      <div className="grid md:grid-cols-2 gap-4 w-3/5 relative">
         <HeroImage
           image={product?.image}
           productName={product.name}
