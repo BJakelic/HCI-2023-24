@@ -87,7 +87,7 @@ const ProductPage = async ({ params }: { params: Params }) => {
         <HeroImage
           image={product?.image}
           productName={product.name}
-          className="w-full h-[400px]"
+          className="w-full md:h-[400px]"
         />
         <div className="flex flex-col gap-4 justify-between mb-20">
           <div className="flex flex-col">
