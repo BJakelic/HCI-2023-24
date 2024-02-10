@@ -26,7 +26,7 @@ const NavBar = () => {
     const handleScroll = () => {
       const navbar = document.getElementById("navbar");
       if (navbar) {
-        if (window.scrollY > 400) {
+        if (window.scrollY > 480) {
           navbar.classList.add("fixed", "top-0", "left-0", "right-0", "z-50");
         } else {
           navbar.classList.remove("fixed", "top-0", "left-0", "right-0", "z-50");
