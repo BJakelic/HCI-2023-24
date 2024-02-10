@@ -2,13 +2,25 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      "res.cloudinary.com",
-      "picsum.photos",
-      "via.placeholder.com",
-      "unsplash.com",
-      "source.unsplash.com",
-      "images.ctfassets.net",
+    remotePatterns: [
+      { 
+        hostname: "res.cloudinary.com"
+      },
+      { 
+        hostname: "picsum.photos"
+      },
+      { 
+        hostname: "via.placeholder.com"
+      },
+      { 
+        hostname: "unsplash.com"
+      },
+      { 
+        hostname: "source.unsplash.com"
+      },
+      { 
+        hostname: "images.ctfassets.net"
+      },
     ],
   },
 };
