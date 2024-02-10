@@ -1,5 +1,7 @@
 import { SearchParams } from "@/app/feedback/page";
 import { BadgeProps, Badge } from "@/components/ui/badge";
+import React from 'react';
+import HeroImage from './HeroImage';
 import {
   Card,
   CardContent,
@@ -16,7 +18,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 //import { products, categories } from "./productList";
 import contentfulService from "@/lib/contentfulClient";
-
+/*
 export interface HeroImageProps {
   productName: string;
   image?: string;
@@ -43,7 +45,7 @@ export const HeroImage = ({
     </div>
   );
 };
-
+*/
 const ProductCard: FC<TypeProductListItem> = ({
   name,
   description,
@@ -83,7 +85,7 @@ const ProductCard: FC<TypeProductListItem> = ({
 const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
   const products = await contentfulService.getAllProducts();
   //const categories = await contentfulService.getAllCategories();
-
+  
   const filteredProducts = searchParams._category
     ? products.filter((product) => {
         return product.category?.some((category) => {
@@ -91,12 +93,13 @@ const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
         });
       })
     : products;
-
+  
   return (
     <main className="container flex flex-col items-center gap-10 pt-8 pb-24">
       <h1 className="text-center mt-5 mb-5 mr-2 ml-2 font-tahoma font-bold text-brand-special-100 text-2xl md:text-4xl">
         Check out some available products that match your desires!
       </h1>
+      <HeroImage productName={""} /> {/* Use HeroImage component here */}
       <ul className="grid md:grid-cols-2 gap-8">
         {filteredProducts.map((product) => {
           return (

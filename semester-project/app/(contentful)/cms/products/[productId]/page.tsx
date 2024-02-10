@@ -13,7 +13,8 @@ import javascript from "highlight.js/lib/languages/javascript";
 import python from "highlight.js/lib/languages/python";
 import "highlight.js/styles/github-dark.css";
 //import { RichTextLinksFragment } from "@/specschecks/app/gql/graphql";
-import { HeroImage } from "../page";
+//import { HeroImage } from "../page";
+import HeroImage from '@/app/(contentful)/cms/products/HeroImage';
 import contentfulService from "@/lib/contentfulClient";
 import { Key } from "react";
 
