@@ -1,3 +1,6 @@
+<h1>SpecsChecks Report:</h1>
+🔗 https://forest-litter-45f.notion.site/SpecsChecks-Report-0ce29d356f484a27b8e9e5868688fa1b?pvs=4
+
 <h1>📝 Weekly progress #1</h1>
 <h2>  ✅ Status:</h2>
 - Updated and improved overall design (colors, font, buttons, etc.)<br />
